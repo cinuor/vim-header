@@ -221,23 +221,25 @@ endfun
 " Generate Header
 fun s:add_header()
     let save_pos = getpos(".")
-    let i = 0
+    let i = line(".")
 
     " If filetype has initial line
-    if b:first_line != ''
-        let line = search(b:first_line_pattern)
-        if line == 0
-            call append(i, b:first_line)
-            let i += 1
-        else
-            let i = line
-        endif
-    endif
+    " if b:first_line != ''
+        " let line = search(b:first_line_pattern)
+        " if line == 0
+            " call append(i, b:first_line)
+            " let i += 1
+        " else
+            " let i = line
+        " endif
+    " endif
+
     " if has encoding
-    if b:encoding != ''
-        call append(i, b:encoding)
-        let i += 1
-    endif
+    " if b:encoding != ''
+        " call append(i, b:encoding)
+        " let i += 1
+    " endif
+
     " If filetype supports block comment, open comment
     if b:block_comment
         call append(i, b:comment_begin)
@@ -284,6 +286,10 @@ fun s:add_header()
     if b:block_comment
         call append(i, b:comment_end)
     endif
+    
+    " add new line
+    call append(i, "")
+
     call setpos(".", save_pos)
 endfun
 
@@ -420,7 +426,7 @@ endfun
 fun s:add_license_header(license_name)
     let save_pos = getpos(".")
     " Add other infos
-    let i = 0
+    let i = line(".")
 
     " If filetype has initial line
     " if b:first_line != ''
