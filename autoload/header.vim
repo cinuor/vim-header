@@ -423,15 +423,15 @@ fun s:add_license_header(license_name)
     let i = 0
 
     " If filetype has initial line
-    if b:first_line != ''
-        let line = search(b:first_line_pattern)
-        if line == 0
-            call append(i, b:first_line)
-            let i += 1
-        else
-            let i = line
-        endif
-    endif
+    " if b:first_line != ''
+        " let line = search(b:first_line_pattern)
+        " if line == 0
+            " call append(i, b:first_line)
+            " let i += 1
+        " else
+            " let i = line
+        " endif
+    " endif
 
     " if b:encoding != ''
         " call append(i, b:encoding)
