@@ -445,10 +445,10 @@ fun s:add_license_header(license_name)
     endif
 
     " Fill user's information
-    if g:header_field_filename
-        call append(i, b:comment_char . expand('%s:t'))
-        let i += 1
-    endif
+    " if g:header_field_filename
+        " call append(i, b:comment_char . expand('%s:t'))
+        " let i += 1
+    " endif
     if g:header_field_author != ''
         if g:header_field_author_email != ''
             let email = ' <' . g:header_field_author_email . '>'
