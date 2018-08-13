@@ -433,10 +433,10 @@ fun s:add_license_header(license_name)
         endif
     endif
 
-    if b:encoding != ''
-        call append(i, b:encoding)
-        let i += 1
-    endif
+    " if b:encoding != ''
+        " call append(i, b:encoding)
+        " let i += 1
+    " endif
 
     " If filetype supports block comment, open comment
     if b:block_comment
