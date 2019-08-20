@@ -221,24 +221,24 @@ endfun
 " Generate Header
 fun s:add_header()
     let save_pos = getpos(".")
-    let i = line(".")
+    let i = 0
 
     " If filetype has initial line
-    " if b:first_line != ''
-        " let line = search(b:first_line_pattern)
-        " if line == 0
-            " call append(i, b:first_line)
-            " let i += 1
-        " else
-            " let i = line
-        " endif
-    " endif
+    if b:first_line != ''
+        let line = search(b:first_line_pattern)
+        if line == 0
+            call append(i, b:first_line)
+            let i += 1
+        else
+            let i = line
+        endif
+    endif
 
     " if has encoding
-    " if b:encoding != ''
-        " call append(i, b:encoding)
-        " let i += 1
-    " endif
+    if b:encoding != ''
+        call append(i, b:encoding)
+        let i += 1
+    endif
 
     " If filetype supports block comment, open comment
     if b:block_comment
